@@ -1,0 +1,56 @@
+@import './animation/animation'
+
+#content
+  .home
+    &>div
+      .home1
+        width: 100%
+        height: 100%
+        transform-style: preserve-3d
+        perspective: 1000px
+        li
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          visibility: hidden
+          &.active
+            visibility: visible
+          &.leftshow
+            visibility: visible
+            animation: leftshow 1s linear  1
+          &.righthide
+            visibility: hidden
+            animation: righthide 1s linear 1
+          &.lefthide
+            visibility: hidden
+            animation: lefthide 1s linear 1
+          &.rightshow
+            visibility: visible
+            animation: rightshow 1s linear 1 
+          div
+            text-align: center
+            line-height: 520px
+            color: white
+          &:nth-child(1)
+            background-color: #dc6c5f
+          &:nth-child(2)
+            background-color: #95dc84
+          &:nth-child(3)
+            background-color: #64b9d2
+          &:nth-child(4)
+            background-color: #000
+      .home2
+        display: flex
+        justify-content: center
+        li 
+          height: 25px
+          width: 25px
+          background-color: rgba(255,255,255,.3)
+          box-shadow: 0 0 4px rgba(25, 25, 25, .8)
+          border-radius: 50%
+          margin: 0 5px
+          cursor: pointer
+          &.active
+            background: #fff

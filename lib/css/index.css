@@ -118,28 +118,28 @@ img {
   width: 100%;
   transition: top 0.5s;
 }
-#content .list li {
+#content .list > li {
   position: relative;
   width: 100%;
   height: 100%;
   background-position: 50% 50% !important;
 }
-#content .list li.home {
+#content .list > li.home {
   background: url("../../static/img/bg1.jpg") no-repeat;
 }
-#content .list li.course {
+#content .list > li.course {
   background: url("../../static/img/bg2.jpg") no-repeat;
 }
-#content .list li.works {
+#content .list > li.works {
   background: url("../../static/img/bg3.jpg") no-repeat;
 }
-#content .list li.about {
+#content .list > li.about {
   background: url("../../static/img/bg4.jpg") no-repeat;
 }
-#content .list li.team {
+#content .list > li.team {
   background: url("../../static/img/bg5.jpg") no-repeat;
 }
-#content .list li > div {
+#content .list > li > div {
   width: 1100px;
   height: 520px;
   position: absolute;
@@ -172,6 +172,127 @@ img {
 }
 
 /* 内容区布局结束 */
+@keyframes works3Move {
+  0% {
+    transform: translateX(0px) rotateY(0deg);
+  }
+  49% {
+    transform: translateX(-495px) rotateY(0deg);
+  }
+  50% {
+    transform: translateX(-500px) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(0px) rotateY(180deg);
+  }
+}
+@keyframes leftshow {
+  0% {
+    visibility: hidden;
+    transform: translateZ(-200px);
+  }
+  50% {
+    transform: translateX(-40%) rotateY(45deg) scale(0.7);
+  }
+}
+@keyframes righthide {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    transform: translateX(40%) rotateY(-45deg) scale(0.7);
+  }
+  100% {
+    transform: translateZ(-200px);
+  }
+}
+@keyframes lefthide {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    transform: translateX(-40%) rotateY(45deg) scale(0.7);
+  }
+  100% {
+    transform: translateZ(-200px);
+  }
+}
+@keyframes rightshow {
+  0% {
+    visibility: hidden;
+    transform: translateZ(-200px);
+  }
+  50% {
+    transform: translateX(40%) rotateY(-45deg) scale(0.7);
+  }
+}
+#content .home > div .home1 {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+#content .home > div .home1 li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+#content .home > div .home1 li.active {
+  visibility: visible;
+}
+#content .home > div .home1 li.leftshow {
+  visibility: visible;
+  animation: leftshow 1s linear 1;
+}
+#content .home > div .home1 li.righthide {
+  visibility: hidden;
+  animation: righthide 1s linear 1;
+}
+#content .home > div .home1 li.lefthide {
+  visibility: hidden;
+  animation: lefthide 1s linear 1;
+}
+#content .home > div .home1 li.rightshow {
+  visibility: visible;
+  animation: rightshow 1s linear 1;
+}
+#content .home > div .home1 li div {
+  text-align: center;
+  line-height: 520px;
+  color: white;
+}
+#content .home > div .home1 li:nth-child(1) {
+  background-color: #dc6c5f;
+}
+#content .home > div .home1 li:nth-child(2) {
+  background-color: #95dc84;
+}
+#content .home > div .home1 li:nth-child(3) {
+  background-color: #64b9d2;
+}
+#content .home > div .home1 li:nth-child(4) {
+  background-color: #000;
+}
+#content .home > div .home2 {
+  display: flex;
+  justify-content: center;
+}
+#content .home > div .home2 li {
+  height: 25px;
+  width: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 4px rgba(25, 25, 25, 0.8);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+#content .home > div .home2 li.active {
+  background: #fff;
+}
+
 #content .list .course > div .course1 {
   margin-bottom: 80px;
   margin-right: 50px;
@@ -258,6 +379,46 @@ img {
   }
   100% {
     transform: translateX(0px) rotateY(180deg);
+  }
+}
+@keyframes leftshow {
+  0% {
+    visibility: hidden;
+    transform: translateZ(-200px);
+  }
+  50% {
+    transform: translateX(-40%) rotateY(45deg) scale(0.7);
+  }
+}
+@keyframes righthide {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    transform: translateX(40%) rotateY(-45deg) scale(0.7);
+  }
+  100% {
+    transform: translateZ(-200px);
+  }
+}
+@keyframes lefthide {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    transform: translateX(-40%) rotateY(45deg) scale(0.7);
+  }
+  100% {
+    transform: translateZ(-200px);
+  }
+}
+@keyframes rightshow {
+  0% {
+    visibility: hidden;
+    transform: translateZ(-200px);
+  }
+  50% {
+    transform: translateX(40%) rotateY(-45deg) scale(0.7);
   }
 }
 #content .list .works > div .work1 {

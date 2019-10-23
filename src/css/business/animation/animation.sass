@@ -7,3 +7,37 @@
     transform: translateX(-500px) rotateY(180deg)
   100%
     transform: translateX(0px) rotateY(180deg)
+
+@keyframes leftshow
+  0%
+    visibility: hidden
+    transform: translateZ(-200px)
+  50%
+    transform: translateX(-40%) rotateY(45deg) scale(.7)
+
+@keyframes righthide
+  0%
+    visibility: visible
+  50%
+    transform: translateX(40%) rotateY(-45deg) scale(.7)
+  100%
+    transform: translateZ(-200px)
+
+@keyframes lefthide
+  0%
+    visibility: visible
+  50%
+    transform: translateX(-40%) rotateY(45deg) scale(.7)
+  100%
+    transform: translateZ(-200px)
+
+@keyframes rightshow
+  0%
+    visibility: hidden
+    transform: translateZ(-200px)
+  50%
+    transform: translateX(40%) rotateY(-45deg) scale(.7)
+    
+    
+    
+    
