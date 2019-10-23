@@ -26,11 +26,9 @@ export default (e,index) => {
       move(index) 
       break
     case 'down':
-      console.log(direction)
       index < (length - 1) ? index++ : (length - 1)
       move(index)
       break
   }
   content.index = index
-  console.log(index)
 }

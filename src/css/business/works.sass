@@ -1,0 +1,56 @@
+@import './animation/animation'
+  
+#content
+  .list
+    .works
+      &>div
+        .work1
+          margin: 0 0 200px 50px 
+          overflow: hidden 
+          z-index: 2
+        .work2
+          margin-left: 50px
+          position: relative
+          z-index: 2
+          .item
+            float: left
+            width: 220px
+            height: 133px
+            margin: 0 15px
+            position: relative
+            overflow: hidden
+            img 
+              transition: transform .5s
+            .mask
+              position: absolute
+              top: 0
+              bottom: 0
+              left: 0
+              right: 0
+              padding: 10px
+              background: #000
+              color: white
+              opacity: 0
+              transition: opacity .5s
+              .icon
+                width: 32px
+                height: 34px
+                margin: 15px auto 0
+                background: url('../../../static/img/zoomico.png')
+                transition: background-position .5s
+                &:hover
+                  background-position: 0 -35px
+            &:hover
+              img 
+                transform: scale(1.5) rotate(30deg)
+              .mask
+                opacity: .6
+        .work3
+          width: 167px
+          height: 191px
+          background: url('../../../static/img/robot.png')
+          position: absolute
+          left: 900px
+          top: 170px
+          animation: works3Move 4s linear infinite
+        

@@ -5,6 +5,9 @@ export default index => {
   const pointNodes = document.querySelectorAll('#content .points li')
   const content = document.querySelector('#content')
   const cList = document.querySelector('#content .list')
+
+  //在每次点击导航和小圆点时 同步index
+  content.index = index
   //切换按钮样式 和 小圆点样式
   for (let j = 0; j < upNodes.length; j++) {
     upNodes[j].style.width = ""
