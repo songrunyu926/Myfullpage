@@ -1,3 +1,5 @@
+import accessArr from './../../business/access/access'
+
 export default index => {
   const upNodes = document.querySelectorAll('#head .headMain nav .list li .down')
   const arrow = document.querySelector('#head .headMain>.arrow')
@@ -20,5 +22,14 @@ export default index => {
 
   //竖向滑动
   cList.style.top = - index * content.offsetHeight + 'px';
+
+  //开启入场动画
+  if(accessArr[index] && typeof accessArr[index]['infn'] === 'function'){
+    accessArr[index]['infn']()
+  }
+  //开启出场动画
+  if(accessArr[content.preindex] && typeof accessArr[content.preindex]['infn'] === 'function'){
+    accessArr[content.preindex]['outfn']()
+  }
  
 }

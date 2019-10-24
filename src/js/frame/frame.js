@@ -14,6 +14,7 @@ window.onload = () => {
   //初始化小尖角的位置和第一个nav的颜色  
   arrow.style.left = firstLiNode.offsetLeft + firstLiNode.offsetWidth / 2 - arrow.offsetWidth / 2 + 'px'
   firstupNode.style.width = '100%'
+  content.preindex = 0
   //移动小尖角的位置  点击nav切换颜色 小圆点切换 
   if(liNodes.length === pointNodes.length){
     for (var i = 0; i < liNodes.length; i++) {
@@ -21,6 +22,7 @@ window.onload = () => {
       pointNodes[i].index = i
       liNodes[i].onclick = pointNodes[i].onclick = function (){
         move(this.index)
+        content.preindex = this.index
       }
     }
   }

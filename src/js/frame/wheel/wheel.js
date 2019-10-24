@@ -19,7 +19,7 @@ export default (e,index) => {
     direction = 'up'
   }
 
-
+  content.preindex = index
   switch(direction){
     case 'up':
       index > 0 ? index-- : 0

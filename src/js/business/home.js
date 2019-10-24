@@ -51,6 +51,7 @@ export default function () {
   
         //赋值
         oldindex = this.index
+        autoindex = this.index
         getauto()
       }
     }
@@ -59,6 +60,7 @@ export default function () {
 
   function getauto() {
     //定时器
+    clearInterval(timer)
   timer = setInterval(() => {
     autoindex++
     //限制范围
@@ -83,16 +85,11 @@ export default function () {
 
     //改变oldindex
     oldindex = autoindex
-  }, 2000)
+  }, 2500)
   } 
   getauto()
   //移入关闭定时器 移出开启定时器
   home1.onmouseenter = () => clearInterval(timer)
   home1.onmouseleave = getauto
 
-
-  //轮播函数
-  function swiper() {
-
-  }
 }
