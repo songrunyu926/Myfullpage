@@ -1,7 +1,7 @@
 import move from "./move/move"
 import wheel from "./wheel/wheel"
 
-window.onload = () => {
+export default () => {
   //获取元素
   const arrow = document.querySelector('#head .headMain>.arrow')
   const liNodes = document.querySelectorAll('#head .headMain>nav>.list>li')

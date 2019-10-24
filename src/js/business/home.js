@@ -87,7 +87,7 @@ export default function () {
     oldindex = autoindex
   }, 2500)
   } 
-  getauto()
+  setTimeout(getauto, 500);
   //移入关闭定时器 移出开启定时器
   home1.onmouseenter = () => clearInterval(timer)
   home1.onmouseleave = getauto

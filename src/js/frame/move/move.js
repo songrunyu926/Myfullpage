@@ -28,7 +28,7 @@ export default index => {
     accessArr[index]['infn']()
   }
   //开启出场动画
-  if(accessArr[content.preindex] && typeof accessArr[content.preindex]['infn'] === 'function'){
+  if(accessArr[content.preindex] && typeof accessArr[content.preindex]['infn'] === 'function' && index !== content.preindex){
     accessArr[content.preindex]['outfn']()
   }
  
