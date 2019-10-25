@@ -8,8 +8,8 @@ import accessArr from "./business/access/access"
 import music from "./music/music"
 import open from "./open/open"
 
+open()
 window.onload = () => {
-  setTimeout(open, 0);
   frame()
   home()
   team()
