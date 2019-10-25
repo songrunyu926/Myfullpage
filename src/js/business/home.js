@@ -85,7 +85,7 @@ export default function () {
 
     //改变oldindex
     oldindex = autoindex
-  }, 2500)
+  }, 2000)
   } 
   setTimeout(getauto, 500);
   //移入关闭定时器 移出开启定时器
