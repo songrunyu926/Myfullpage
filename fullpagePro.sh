@@ -1,5 +1,5 @@
- npm run dosass
- npm run dopostcss
- npm run dowebpack
- npm run dobabel
+ npm run sasswk
+ npm run postcsswk
+ npm run webpackwk
+ npm run babelwk
  npm run docopy

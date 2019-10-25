@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "sasswk": "sass ./src/css/index.sass ./lib/css/index.css",
-    "postcsswk": "postcss ./lib/css/index.css -o ./dist/css/index.min.css",
+    "postcsswk": "postcss ./lib/css/index.css -o ./dist/css/index.css",
     "webpackwk": "webpack ./src/js/index.js  ./lib/js/index.js",
     "babelwk": "babel ./lib/js/index.js -o ./dist/js/index.js",
+    "docopy": "node ./util/copy.js",
     
     "dosassDev": "sass --watch ./src/css/index.sass  ./lib/css/index.css",
     "dowebpackDev": "webpack --watch ./src/js/index.js  ./lib/js/index.js"
