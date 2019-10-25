@@ -16,9 +16,7 @@ export default () => {
     img.src = '../../../static/img/' + imgArr[i]
     img.onload = () => {
       complate++
-      console.log(complate)
       line.style.width = ((complate/imgArr.length) * 100)  + "%"
-      console.log(((complate/imgArr.length) * 100)  + "%")
     }
   }
 
@@ -32,6 +30,5 @@ export default () => {
   //清除mask
   curtains[0].addEventListener('transitionend',() => {
     mask.remove()
-    audio.play()
   })
 }

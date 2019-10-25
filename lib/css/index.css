@@ -317,6 +317,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 15px;
   visibility: hidden;
 }
 #content .home > div .home1 li.active {
@@ -654,6 +655,13 @@ img {
   width: 118px;
   height: 100%;
   background: url("../../../static/img/team.png");
+  transition: opacity 0.5s;
+}
+#content .list .team > div .team3 #qipao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
 }
 
 #wrap .mask {

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>阳光下的泡沫</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <canvas id="myCanvas" width="400" height="400"></canvas>
+  <script>
+      var oc = document.querySelector('#myCanvas')
+      var context = oc.getContext('2d')
+
+      //存圆的数组
+      let arr = []
+
+      //往数组中加圆
+      setInterval(() => {
+        let x = Math.round(Math.random() * oc.width)
+        let y = Math.round(Math.random() * oc.height)
+        let radius = 10
+        let r = Math.round(Math.random() * 255)
+        let g = Math.round(Math.random() * 255)
+        let b = Math.round(Math.random() * 255)
+        let a = 1
+
+        arr.push({x,y,radius,r,g,b,a})
+      }, 500);
+
+      //画圆
+      setInterval(() => {
+        context.clearRect(0, 0, oc.width, oc.height);
+
+        arr.forEach((item,index) => {
+          item.radius += 1
+          item.a -= 0.01
+
+          if(item.a <= 0){
+            arr.splice(index,1)
+          }
+        })
+        
+        arr.forEach(item => {
+          context.save();
+          context.beginPath();
+          context.fillStyle=`rgba(${item.r},${item.g},${item.b},${item.a})`;
+          context.arc(item.x, item.y, item.radius, 0,2 * Math.PI);
+          context.fill();
+          context.restore();
+          
+        })
+      }, 1000/60);
+  </script>
+</body>
+
+</html>

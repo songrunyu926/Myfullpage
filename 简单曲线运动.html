@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      position: absolute;
+      left: 100px;
+      top: 50%;
+      background-color: orange;
+    }
+    span {
+      width: 2px;
+      height: 2px;
+      background: #000;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+  </div>
+  <div class=""></div>
+  <script>
+     const box = document.querySelector('#box')
+     let startX = box.offsetLeft
+     let startY = box.offsetTop
+     let deg = 0
+     setInterval(() => {
+       deg+=3
+       box.style.left = startX + (Math.sin(deg * Math.PI / 180) * 100) + 'px'
+       box.style.top = startY - (deg * Math.PI / 180 * 20)  + 'px'
+       let spanNode = document.createElement('span')
+        spanNode.style.left = box.offsetLeft + 'px'
+        spanNode.style.top = box.offsetTop + 'px'
+       document.body.appendChild(spanNode)
+      
+     }, 1000/60);
+  </script>
+</body>
+</html>

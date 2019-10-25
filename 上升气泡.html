@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    canvas {
+      background: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="myCanvas" width="128" height="448"></canvas>
+
+  <script>
+    const oc = document.querySelector('#myCanvas')
+    let context = oc.getContext('2d');
+
+    let arr = []
+
+    setInterval(() => {
+      let x = Math.round(Math.random() * oc.width)
+      let y = oc.height - 20
+      let radius = Math.round(5 + Math.random() * 5)
+      let r = Math.round(Math.random() * 255)
+      let g = Math.round(Math.random() * 255)
+      let b = Math.round(Math.random() * 255)
+      let a = 0.7
+      let deg = 0
+      let startX = x
+      let startY = y
+      let stepX = Math.round(10 + Math.random() * 30)
+      let stepY = Math.round(10 + Math.random() * 10)
+
+      arr.push({x,y,radius,r,g,b,a,deg,startX,startY,stepX,stepY})
+    }, 100);
+
+    setInterval(() => {
+      context.clearRect(0, 0, oc.width, oc.height);
+
+      arr.forEach((item,index) => {
+        item.deg += 5
+        //按照sin曲线去运动
+        item.x = item.startX - (Math.sin(item.deg * Math.PI / 180)) * item.stepX
+        item.y = item.startY - (item.deg * Math.PI / 180) * item.stepY
+        if (item.y <= 20){
+          arr.splice(index,1)
+        }
+      })
+
+      arr.forEach(item => {
+        context.save();
+        context.beginPath();
+        context.fillStyle = `rgba(${item.r},${item.g},${item.b},${item.a})`
+        context.arc(item.x, item.y, item.radius, 0, Math.PI * 2);
+        context.fill();
+        context.restore();
+      });
+    }, 1000 / 60);
+  </script>
+</body>
+
+</html>

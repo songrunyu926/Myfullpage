@@ -18,5 +18,5 @@ window.onload = () => {
   for (let i = 0; i < accessArr.length; i++) {
     accessArr[i]['outfn']()
   }
-  setTimeout(() => accessArr[0]['infn'](), 2000)
+  setTimeout(() => accessArr[0]['infn'](), 1000)
 }
